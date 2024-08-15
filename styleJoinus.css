@@ -1,0 +1,95 @@
+body {
+    background-color: #FFB4B0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding-top: 5rem;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%; /* Adjusted padding for centering */
+    background-color: #582A38;
+    border-bottom: 2px solid #000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navbar .logo h1 {
+    color: white;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar nav ul li {
+    margin: 0;
+}
+
+.navbar nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+
+.join {
+    text-align: center;
+    padding: 2rem;
+    background-color: #FFF;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 2s ease-in-out;
+}
+
+.join h1 {
+    font-size: 2.5rem;
+    color: #582A38;
+    margin-bottom: 1rem;
+}
+
+.join p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.links {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn {
+    text-decoration: none;
+    color: white;
+    background-color: #582A38;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #DEB3AD;
+    transform: scale(1.1);
+}
+
+.btn:active {
+    transform: scale(0.9);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
