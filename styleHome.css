@@ -80,12 +80,12 @@ body {
     }
 }
 
-.banner {
-    width: 90%; /* Adjusted width for centering */
-    margin: 0 auto; /* Center content */
-    text-align: center;
-    padding: 2% 5%; /* Added padding for spacing */
+.banner img {
+    max-width: 100%; /* Ensures the image doesn't exceed the width of its container */
+    height: auto; /* Maintains the aspect ratio of the image */
+    display: block; /* Prevents the image from adding extra space */
 }
+
 
 .main-heading {
     font-size: 3px;
@@ -122,6 +122,7 @@ body {
     animation: fadeIn 1s ease-in-out;
 }
 
+
 .founder-section {
     display:inline-flex;
     flex-direction:row;
@@ -155,6 +156,56 @@ body {
     width: 120rem;
 }
 
+.info-section {
+    display: flex;
+    justify-content: space-around;
+    margin: 40px 0;
+}
+
+.info-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 45%;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.info-card img {
+    width: 100%;
+    height: auto;
+}
+
+.info-card h3 {
+    margin: 20px 0 10px;
+    color: #333;
+}
+
+.info-card p {
+    padding: 0 20px;
+    color: #555;
+}
+
+.info-card a {
+    display: inline-block;
+    margin: 20px 0;
+    padding: 10px 20px;
+    background-color: #FF7A7A;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.info-card a:hover {
+    background-color: #FF4B4B;
+}
+
+.info-card:hover {
+    transform: scale(1.05);
+}
+
 .mascot-section {
     background-color: #fce4e4; /* Translucent white */
     border-radius: 10px;
@@ -174,17 +225,18 @@ body {
   }
   
   .mascot-image img {
-    width: 20%; /* Increase image size for better visibility */
+    width: 20%; 
     border-radius: 10px;
     position: absolute;
-    bottom: 0; 
+    bottom: 10; 
     right: 0; 
     top: 0;
-    animation: zoomIn 2s ease-in-out; /* Adjust animation as needed */
+    left: -100;
+    margin-bottom: 100;
+    animation: zoomIn 2s ease-in-out; 
     z-index: -1;
   }
 
-  
   /* Additional animation for the mascot */
   @keyframes mascot-animation {
     0% {
@@ -199,27 +251,28 @@ body {
   }
   
   .mascot-image img {
-    animation: mascot-animation 5s infinite; /* Add animation to the image */
+    animation: mascot-animation 5s infinite; 
   }
 
+  /* Quotes Container: now separated into individual boxes */
   .quotes-container {
     display: flex;
     justify-content: space-between;
-    width: 90%; /* Adjusted width for centering */
+    gap: 2rem;
+    width: 90%; 
     margin: 2rem auto;
+    padding: 2rem;
+    position: relative;
+  }
+
+.quotes {
+    width: 45%;
     padding: 2rem;
     background-color: #fce4e4;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
-}
-
-.quotes {
-    width: 45%;
-    position: relative;
     text-align: left;
-    padding: 1rem;
-    border-radius: 10px;
 }
 
 .quotes::before {
@@ -244,7 +297,7 @@ body {
     overflow: hidden; /* Hides the text initially */
     white-space: nowrap;
     border-right: 3px solid #582A38; /* Adds the blinking cursor */
-    animation: typing 2s steps(40, end), blink-caret 0.75s step-end infinite;
+    animation: typing 2s steps(40, end), blink-caret 0.75s step-end 2; /* Adjusted animation to stop blinking cursor */
 }
 
 /* Typing Effect */
@@ -260,12 +313,16 @@ body {
 
 
 @media (max-width: 768px) {
-    .founder-section, .mascot-container {
+    .founder-section, .mascot-container, .quotes-container {
         flex-direction: column;
     }
 
     .founder-image img, .mascot-image img {
         width: 80%;
+    }
+
+    .quotes {
+        width: 100%; /* Ensure quotes take full width on smaller screens */
     }
 }
 
@@ -283,7 +340,6 @@ body {
     from { transform: scale(0.5); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
 }
-
 /* button */ 
 .navbar nav ul li a:hover {
     color: #ffb4b0;
@@ -303,5 +359,42 @@ body {
 .button:hover {
     transform: scale(1.1);
     background-color: #ffb4b0;
+}
+footer {
+    background-color: #582A38;
+    color: white;
+    padding: 20px 50px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-content .left-section h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.footer-content .logo h1 {
+    font-size: 24px;
+    margin: 0;
+}
+.footer-content .right-section a {
+    transition: transform 0.3s ease;
+    margin-right: 70px;
+}
+.footer-content .right-section a:hover {
+    transform: scale(1.1);
+}
+.footer-content .right-section img {
+    width: 30px;
+    height: 30px;
+}
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 14px;
 }
 
