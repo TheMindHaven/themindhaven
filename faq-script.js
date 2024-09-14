@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
 document.addEventListener("DOMContentLoaded", function() {
     let counter = document.getElementById("therapistsCounter");
     let count = 0;
-    let maxCount = 5;
+    let maxCount = 10;
     let interval = setInterval(function() {
         if (count < maxCount) {
             count++;
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             clearInterval(interval);
         }
-    }, 200); 
+    }, 100); 
 });
 
 document.addEventListener("DOMContentLoaded", function() {
