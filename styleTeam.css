@@ -181,11 +181,7 @@ body::before {
     right: auto;
 }
 
-body::after {
-    bottom: 0;
-    right: 0;
-    animation-direction: reverse;
-}
+
 
 @keyframes ribbonAnimate {
     0% {
