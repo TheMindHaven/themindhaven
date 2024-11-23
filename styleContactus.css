@@ -13,9 +13,9 @@ body {
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     animation: fadeIn 2s ease-in-out;
-    margin: 2rem auto; 
-    max-width: 600px; 
-    margin-top: 10%;
+    margin: 2rem auto;
+    max-width: 90%;
+    width: 600px; 
 }
 
 .contact h1 {
@@ -32,7 +32,9 @@ body {
 
 .links {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap; /* Allow buttons to wrap */
 }
 
 .btn {
@@ -46,7 +48,7 @@ body {
 
 .btn:hover {
     background-color: #DEB3AD;
-    transform: scale(1.5);
+    transform: scale(1.1);
 }
 
 .btn:active {
@@ -59,30 +61,29 @@ body {
 }
 
 .navbar {
-    display:flex;
-    padding-top: 0%;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
     background-color: #582A38;
     border-bottom: 2px solid #000;
-    margin-top: 0%;
     position: fixed;
-    margin: 0%;
-    width: 90%;
-    top: 0%;
+    width: 100%; /* Ensure navbar spans the full width */
+    top: 0;
+    z-index: 1000; /* Ensure it stays on top */
 }
 
 .navbar .logo h1 {
     color: white;
-    font-size: 2rem;
+    font-size: 1.5rem; /* Adjusted for smaller screens */
     margin: 0;
 }
 
 .navbar nav ul {
     list-style: none;
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
+    flex-wrap: wrap; /* Wrap items on smaller screens */
 }
 
 .navbar nav ul li {
@@ -94,21 +95,102 @@ body {
     text-decoration: none;
     font-size: 1rem;
 }
-/* highlight active curren page */
-.navbar nav ul li a.active {
-    font-size: 1.2rem; 
-    border-bottom: 2px solid #fff; 
-    color: #FFB4B0; 
-    padding-bottom: 5px; 
-}
 
+/* Highlight active current page */
+.navbar nav ul li a.active {
+    font-size: 1.2rem;
+    border-bottom: 2px solid #fff;
+    color: #FFB4B0;
+    padding-bottom: 5px;
+}
 
 footer {
     background-color: #582A38;
     color: white;
-    padding: 20px 50px;
+    padding: 20px 10px;
     text-align: center;
-    position: fixed;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap; /* Wrap on smaller screens */
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-content .left-section h3 {
+    margin-bottom: 10px;
+    font-size: 16px; /* Adjusted for smaller screens */
+}
+
+.footer-content .logo h1 {
+    font-size: 20px; /* Adjusted for smaller screens */
+    margin: 0;
+}
+
+.footer-content .right-section a {
+    transition: transform 0.3s ease;
+    margin: 0 10px; /* Adjusted spacing for smaller screens */
+}
+
+.footer-content .right-section a:hover {
+    transform: scale(1.1);
+}
+
+.footer-content .right-section img {
+    width: 25px; /* Adjusted for smaller screens */
+    height: 25px;
+}
+
+.footer-bottom {
+    margin-top: 10px;
+    font-size: 12px; /* Adjusted for smaller screens */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar .logo h1 {
+        font-size: 1.2rem;
+    }
+
+    .navbar nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .contact {
+        padding: 1rem;
+    }
+
+    .contact h1 {
+        font-size: 2rem;
+    }
+
+    .contact p {
+        font-size: 1rem;
+    }
+
+    .links {
+        flex-direction: column;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-content .right-section img {
+        width: 20px;
+        height: 20px;
+    }
+}
+footer {
+    background-color: #582A38;
+    color: white;
+    padding: 5px 50px;
+    text-align: center;
+    position: relative;
     bottom: 0;
     width: 100%;
 }
@@ -124,10 +206,12 @@ footer {
 .footer-content .logo h1 {
     font-size: 24px;
     margin: 0;
+    margin-top: 5%;
 }
 .footer-content .right-section a {
     transition: transform 0.3s ease;
     margin-right: 70px;
+    margin-top: 10Px;
 }
 .footer-content .right-section a:hover {
     transform: scale(1.1);
@@ -140,3 +224,4 @@ footer {
     margin-top: 20px;
     font-size: 14px;
 }
+

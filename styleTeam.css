@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
-
+/* General styles */
 body {
     background-color: #ffb4b0;
     font-family: Arial, sans-serif;
@@ -16,11 +15,12 @@ h1 {
     padding: 20px;
     margin: 10;
     font-weight: 600;
-    font-size: 4em;
+    font-size: 3em;
     font-family: 'Montserrat', sans-serif;
     animation: titleFadeIn 2s ease-in-out;
 }
 
+/* Animations */
 @keyframes titleFadeIn {
     from {
         opacity: 0;
@@ -31,11 +31,35 @@ h1 {
         transform: translateY(0);
     }
 }
+
+@keyframes tenureFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Navigation Bar */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 5%; /* Adjusted padding for centering */
+    padding: 1rem 5%;
     background-color: #582A38;
     border-bottom: 2px solid #000;
 }
@@ -61,19 +85,24 @@ h1 {
     text-decoration: none;
     font-size: 1rem;
 }
-/* highlight active curren page */
-.navbar nav ul li a.active {
-    font-size: 1.2rem; 
-    border-bottom: 2px solid #fff; 
-    color: #FFB4B0; 
-    padding-bottom: 5px; 
+
+.navbar-toggler {
+    border: none;
+    background: none;
 }
 
+/* Highlight active page */
+.navbar nav ul li a.active {
+    font-size: 1.2rem;
+    border-bottom: 2px solid #fff;
+    color: #FFB4B0;
+    padding-bottom: 5px;
+}
 
+/* Team Section */
 .team-wrapper {
     margin-bottom: 40px;
 }
-/* bada wala box*/
 
 .team-container {
     display: flex;
@@ -85,169 +114,112 @@ h1 {
     margin-bottom: 5%;
     padding: 2%;
     border-radius: 10px;
-    width: 80%; 
-    text-align: center
+    width: 80%;
+    text-align: center;
 }
 
 #Tenure {
-    width: 100%; 
+    width: 100%;
     text-align: center;
     color: white;
-    margin: 1% ; 
-    font-size: 2em; 
-    animation: tenureFadeIn 2s ease-in-out; /
+    margin: 1%;
+    font-size: 2em;
+    animation: tenureFadeIn 2s ease-in-out;
 }
 
-@keyframes tenureFadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
- /*members wala box*/
 .team-member {
     background: white;
     border-radius: 10px;
     margin: 2%;
     padding: 2%;
     width: 20%;
-    height: 10%;
+    min-width: 150px;
+    max-width: 250px;
     box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
     animation: fadeIn 3s ease-in-out;
-    
 }
+
 .team-member img {
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    margin-bottom: 10px;
-    animation: zoomIn 3s ease-in-out;
-}
-
-.team-member h3 {
-    margin: 10px 0 5px;
-}
-
-.team-member p {
-    color: #333;
-    font-size: 14px;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes zoomIn {
-    from {
-        transform: scale(0.5);
-    }
-    to {
-        transform: scale(1);
-    }
-}
-
-/*the two dots on top and bottom*/ 
-
-body::before, body::after {
-    content: '';
-    position: absolute;
     width: 100px;
     height: 100px;
-    background: linear-gradient(45deg, rgba(255, 180, 176, 0.7), rgba(255, 255, 255, 0.7));
-    animation: ribbonAnimate 10s linear infinite;
-    z-index: -1;
-    border-radius: 50%; 
+    object-fit: cover;
+    margin-bottom: 10px;
 }
 
-body::before {
-    top: 0;
-    left: 0;
+.team-member:hover {
+    transform: scale(1.05);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-body::before {
-    top:auto;
-    right: auto;
+/* Footer */
+footer {
+    background: #582A38;
+    color: white;
+    padding: 1rem;
+    text-align: center;
 }
 
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
 
+.footer-bottom {
+    margin-top: 10px;
+}
 
-@keyframes ribbonAnimate {
-    0% {
-        transform: rotate(0deg) translateX(0) translateY(0);
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar nav ul {
+        flex-direction: column;
+        gap: 1rem;
     }
-    50% {
-        transform: rotate(180deg) translateX(20px) translateY(20px);
+
+    h1 {
+        font-size: 2em;
     }
-    100% {
-        transform: rotate(360deg) translateX(0) translateY(0);
+
+    .team-container {
+        width: 95%;
+        padding: 1%;
     }
-}
 
-/* Ribbons peeche ke */
-.ribbon {
-    position: absolute;
-    width: 200%;
-    height: 10px;
-    background: linear-gradient(45deg, rgba(255,255,255,0.3), rgba(255,255,255,0));
-    opacity: 1;
-    animation: moveRibbon 5s linear infinite;
-    z-index: -1; 
-}
-
-.ribbon1 {
-    top: 10%;
-    left: -50%;
-    transform: rotate(45deg);
-}
-
-.ribbon2 {
-    top: 30%;
-    left: -50%;
-    transform: rotate(-45deg);
-}
-
-.ribbon3 {
-    top: 50%;
-    left: -50%;
-    transform: rotate(45deg);
-}
-
-.ribbon4 {
-    top: 70%;
-    left: -50%;
-    transform: rotate(-45deg);
-}
-@keyframes moveRibbon {
-    from {
-        left: -50%;
-    }
-    to {
-        left: 100%;
+    .team-member {
+        width: 45%; /* Smaller width for two per row on smaller screens */
     }
 }
+
+@media (max-width: 480px) {
+    .navbar nav ul {
+        gap: 0.5rem;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .team-member {
+        width: 90%; /* Full width for single-column layout on small screens */
+    }
+
+    .team-container {
+        padding: 1%;
+    }
+}
+
 footer {
     background-color: #582A38;
     color: white;
-    padding: 20px 50px;
+    padding: 5px 50px;
     text-align: center;
     position: relative;
     bottom: 0;
     width: 100%;
-    padding-bottom: 0%;
-    margin-bottom: 0%;
-
 }
 .footer-content {
     display: flex;
@@ -261,10 +233,12 @@ footer {
 .footer-content .logo h1 {
     font-size: 24px;
     margin: 0;
+    margin-top: 5%;
 }
 .footer-content .right-section a {
     transition: transform 0.3s ease;
     margin-right: 70px;
+    margin-top: 10Px;
 }
 .footer-content .right-section a:hover {
     transform: scale(1.1);
@@ -275,8 +249,6 @@ footer {
 }
 .footer-bottom {
     margin-top: 20px;
-    margin-bottom: 0%;
-    padding-bottom: 0%;
     font-size: 14px;
-    
 }
+
