@@ -137,7 +137,6 @@ body {
     display:inline-flex;
     flex-direction:row;
     align-items: right;
-    text-align: left;
 }
 
 .founder-text h1 {
